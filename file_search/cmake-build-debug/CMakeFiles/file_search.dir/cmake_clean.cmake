@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/file_search.dir/main.cpp.obj"
   "file_search.exe"
   "file_search.exe.manifest"
-  "file_search.lib"
   "file_search.pdb"
+  "libfile_search.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

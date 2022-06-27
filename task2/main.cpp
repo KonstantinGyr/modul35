@@ -4,17 +4,10 @@
 #include <memory>
 
 auto uniqVec=[](std::vector<int>&inVec){
-  std::unordered_set<int>setNum;
-  for(int i=0;i<inVec.size();i++){
-      if(setNum.count(inVec[i])){
-      inVec.erase((inVec.begin()+i));
-      --i;
-      }
-      else{
-          setNum.insert(inVec[i]);
-      }
-  }
-  return std::make_unique<std::vector<int>>(inVec);
+  std::unordered_set<int>setNum(inVec.begin(),inVec.end());
+  inVec.clear();
+  std::vector<int>outVec(setNum.begin(),setNum.end());
+  return std::make_unique<std::vector<int>>(outVec);
 };
 
 int main() {
